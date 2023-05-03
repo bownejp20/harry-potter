@@ -1,0 +1,62 @@
+/* Global styles */
+body {
+  background-color: #eee;
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+  text-align: center;
+  color: #740001;
+  font-size: 36px;
+  margin-top: 20px;
+}
+
+.quiz-step {
+  display: none;
+}
+
+.question {
+  margin-bottom: 20px;
+}
+
+.question h2 {
+  font-size: 24px;
+  margin: 0;
+  color: #740001;
+}
+
+.answer-wrap {
+  background-color: #f5f5f5;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.answer-text {
+  font-size: 18px;
+  margin: 0;
+}
+
+.current {
+  display: block;
+}
+
+/* Low value answers */
+.low-value {
+  background-color: #d7f2e9;
+}
+
+.low-value:hover {
+  background-color: #b2d8ce;
+  cursor: pointer;
+}
+
+/* High value answers */
+.high-value {
+  background-color: #ffd3b6;
+}
+
+.high-value:hover {
+  background-color: #ffad99;
+  cursor: pointer;
+}
