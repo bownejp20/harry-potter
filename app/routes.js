@@ -71,9 +71,9 @@ module.exports = function (app, passport, db, ObjectID) {
       })
   })
 
-  app.delete('/messages', (req, res) => {
+  app.delete('/houseMates', (req, res) => {
     const {id} = req.body
-    db.collection('messages').findOneAndDelete({ _id:ObjectID(id)}, (err, result) => {
+    db.collection('houseMates').findOneAndDelete({ _id:ObjectID(id)}, (err, result) => {
       if (err) return res.send(500, err)
       res.send('Message deleted!')
     })

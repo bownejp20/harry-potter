@@ -1,115 +1,141 @@
 <html>
+
 <head>
- <meta charset="UTF-8">
- <link rel='shortcut icon' type='image/x-icon' href='#' />
- <script src='//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js'></script>
+    <meta charset="UTF-8">
+    <link rel='shortcut icon' type='image/x-icon' href='#' />
+    <script src='//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js'></script>
 
- <link rel="stylesheet" href="https://yui.yahooapis.com/pure/0.6.0/pure-min.css">
- <link rel="stylesheet" href="https://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
-
- <link rel="stylesheet" type="text/css" href="style.css">
-
-
- <title>Harry Potter</title>
+    <link rel="stylesheet" href="https://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+    <link rel="stylesheet" href="https://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+    <script src="https://unpkg.com/phosphor-icons"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>HP - Sorting Hat</title>
 </head>
 
-<body>
+<body class="profileBody">
 
-<div id="quizzie">
-  <h1> Hogwarts Sorting Hat Quiz </h1>
-    <ul class="quiz-step step1 current">
-        <li class="question">
-            <div class="question-wrap">
-                <h2>Question #1: There is a three-headed dog between you and your best friend, what do you do next?</h2>
-            </div>
-        </li>
-        <li class="quiz-answer low-value" data-quizIndex="2">
-            <div class="answer-wrap">
-                <input id="one" type="radio" class="" value=""><label for="one">Try to take on the dog myself, distracting it's view from my friend.</label>
-            </div>
-        </li>
-        <li class="quiz-answer high-value" data-quizIndex="4">
-            <div class="answer-wrap">
-                <input id="oneOne" type="radio" class="" value=""><label for="oneOne"> I use my exceptional broom flying skills to zoom past the dog - leaving my friend in despair.</label>
-            </div>
-        </li>
-    </ul>
-    <ul class="quiz-step step2">
-        <li class="question">
-            <div class="question-wrap">
-                <h2>Question #2: You find yourself standing at a mysterious locked door, what do you do?</h2>
-            </div>
-        </li>
-        <li class="quiz-answer low-value" data-quizIndex="2">
-            <div class="answer-wrap">
-                <input id="two" type="radio" class="" value=""><label for="two">Leave the door alone and act like it doesn't exist.</label>
-            </div>
-        </li>
-        <li class="quiz-answer high-value" data-quizIndex="4">
-            <div class="answer-wrap">
-                <input id="twoTwo" type="radio" class="" value=""><label for="twoTwo">Come back later when no one is around and try to find your way through it.</label>
-            </div>
-        </li>
-    </ul>
-    <ul class="quiz-step step7">
-        <li class="question">
-            <div class="question-wrap">
-                <h2>Question #3: Choose one of the following pets for a companion:</h2>
-            </div>
-        </li>
-        <li class="quiz-answer low-value" data-quizIndex="2">
-            <div class="answer-wrap">
-                <input id="three" type="radio" class="" value=""><label for="three">An owl - bird of prey.</label>
-            </div>
-        </li>
-        <li class="quiz-answer high-value" data-quizIndex="4">
-            <div class="answer-wrap">
-                <input id="threeThree" type="radio" class="" value=""><label for="threeThree">A Cat - a domesticated creature for both Wizards and Muggles.</label>
-            </div>
-        </li>
-    </ul>
-    <ul class="quiz-step step9">
-        <li class="question">
-            <div class="question-wrap">
-                <h2>Question #4: Your close friend is being held by Death Eaters in the basement dungeon of the Malfoy mansion. You:</h2>
-            </div>
-        </li>
-        <li class="quiz-answer low-value" data-quizIndex="2">
-            <div class="answer-wrap">
-                <input id="four" type="radio" class="" value=""><label for="four">Gather together Dumbledore's Army and prepare to fight your way through the dungeon.</label>
-            </div>
-        </li>
-        <li class="quiz-answer high-value" data-quizIndex="4">
-            <div class="answer-wrap">
-                <input id="fourFour" type="radio" class="" value=""><label for="fourFour">Leave your friend to be devoured by the Death Eaters.</label>
-            </div>
-        </li>
-    </ul>
-    <ul class="quiz-step step10">
-        <li class="question">
-            <div class="question-wrap">
-                <h2>Question #5: Severus Snape: Friend or Foe?</h2>
-            </div>
-        </li>
-        <li class="quiz-answer low-value" data-quizIndex="2">
-            <div class="answer-wrap">
-                <input id="five" type="radio" class="" value=""><label for="five">Foe: Snape has always disliked Harry.</label>
-            </div>
-        </li>
-        <li class="quiz-answer high-value" data-quizIndex="4">
-            <div class="answer-wrap">
-                <input id="fiveFive" type="radio" class="" value=""><label for="fiveFive">Friend: Dumbledore had no doubt that Snape was trustworthy</label>
-            </div>
-        </li>
-    </ul>
-    <ul id="results">
-        <li class="results-inner">
-            <p>Your result is:</p>
-            <p class="desc"></p>
-        </li>
-    </ul>
-</div>
-<script src="profile.js"></script>
+    <div id="quizzie">
+        <h1> Hogwarts Sorting Hat Quiz </h1>
+        <ul class="quiz-step step1 current">
+            <li class="question">
+                <div class="question-wrap">
+                    <h2>Question #1: There is a three-headed dog between you and your best friend, what do you do next?
+                    </h2>
+                </div>
+            </li>
+            <li class="quiz-answer low-value" data-quizIndex="2">
+                <div class="answer-wrap">
+                    <input id="one" type="radio" class="" value="" name="one"><label for="one">Try to take on the dog
+                        myself, distracting it's view from my friend.</label>
+                </div>
+            </li>
+            <li class="quiz-answer high-value" data-quizIndex="4">
+                <div class="answer-wrap">
+                    <input id="oneOne" type="radio" class="" value="" name="one"><label for="oneOne"> I use my
+                        exceptional broom flying skills to zoom past the dog - leaving my friend in despair.</label>
+                </div>
+            </li>
+        </ul>
+        <ul class="quiz-step step2">
+            <li class="question">
+                <div class="question-wrap">
+                    <h2>Question #2: You find yourself standing at a mysterious locked door, what do you do?</h2>
+                </div>
+            </li>
+            <li class="quiz-answer low-value" data-quizIndex="2">
+                <div class="answer-wrap">
+                    <input id="two" type="radio" class="" value="" name="two"><label for="two">Leave the door alone and
+                        act like it doesn't exist.</label>
+                </div>
+            </li>
+            <li class="quiz-answer high-value" data-quizIndex="4">
+                <div class="answer-wrap">
+                    <input id="twoTwo" type="radio" class="" value="" name="two"><label for="twoTwo">Come back later
+                        when no one is around and try to find your way through it.</label>
+                </div>
+            </li>
+        </ul>
+        <ul class="quiz-step step7">
+            <li class="question">
+                <div class="question-wrap">
+                    <h2>Question #3: Choose one of the following pets for a companion:</h2>
+                </div>
+            </li>
+            <li class="quiz-answer low-value" data-quizIndex="2">
+                <div class="answer-wrap">
+                    <input id="three" type="radio" class="" value="" name="three"><label for="three">An owl - bird of
+                        prey.</label>
+                </div>
+            </li>
+            <li class="quiz-answer high-value" data-quizIndex="4">
+                <div class="answer-wrap">
+                    <input id="threeThree" type="radio" class="" value="" name="three"><label for="threeThree">A Cat - a
+                        domesticated creature for both Wizards and Muggles.</label>
+                </div>
+            </li>
+        </ul>
+        <ul class="quiz-step step9">
+            <li class="question">
+                <div class="question-wrap">
+                    <h2>Question #4: Your close friend is being held by Death Eaters in the basement dungeon of the
+                        Malfoy mansion. You:</h2>
+                </div>
+            </li>
+            <li class="quiz-answer low-value" data-quizIndex="2">
+                <div class="answer-wrap">
+                    <input id="four" type="radio" class="" value="" name="four"><label for="four">Gather together
+                        Dumbledore's Army and prepare to fight your way through the dungeon.</label>
+                </div>
+            </li>
+            <li class="quiz-answer high-value" data-quizIndex="4">
+                <div class="answer-wrap">
+                    <input id="fourFour" type="radio" class="" value="" name="four"><label for="fourFour">Leave your
+                        friend to be devoured by the Death Eaters.</label>
+                </div>
+            </li>
+        </ul>
+        <ul class="quiz-step step10">
+            <li class="question">
+                <div class="question-wrap">
+                    <h2>Question #5: Severus Snape: Friend or Foe?</h2>
+                </div>
+            </li>
+            <li class="quiz-answer low-value" data-quizIndex="2">
+                <div class="answer-wrap">
+                    <input id="five" type="radio" class="" value="" name="five"><label for="five">Foe: Snape has always
+                        disliked Harry.</label>
+                </div>
+            </li>
+            <li class="quiz-answer high-value" data-quizIndex="4">
+                <div class="answer-wrap">
+                    <input id="fiveFive" type="radio" class="" value="" name="five"><label for="fiveFive">Friend:
+                        Dumbledore had no doubt that Snape was trustworthy</label>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <form id="bottomSection">
+        <h3> submit your name to get your house!</h3>
+        <input id="name" type="text" placeholder="Name">
+        <button id="submitName"> submit </button>
+        <h4>House:</h4>
+        <p class="desc"></p>
+    </form>
+    <section id="houseMates">
+        <h2>House Mates</h2>
+        <ul class="names">
+            <% for(var i=0; i<messages.length; i++) {%>
+                <li class="message">
+                    <span> <img class="harryIcon"src="img/harry.jpg">
+                        <%=messages[i].name%>
+                    </span>
+                    <span data-id="<%=transactions[i]._id %>"><img class="ph ph-trash"src="img/wand.jpg"></i></span>
+                </li>
+                <% } %>
+        </ul>
+    </section>
+    <script src="profile.js"></script>
 
 </body>
+
 </html>

@@ -1,62 +1,61 @@
-/* Global styles */
-body {
-  background-color: #eee;
-  font-family: 'Open Sans', sans-serif;
+.index {
+  background-image: url(https://media.tenor.com/DiS5PdRCb-MAAAAC/sorting-hat.gif);
+  background-repeat: no-repeat;
+  background-size: 1400px 500px;
+  background-position: top;
+  background-color: rgb(0, 0, 0);
+}
+.profileBody{
+  background-image: url(https://media.tenor.com/vkDuuNm40XoAAAAd/hogwarts-legacy-warner-bros-interactive-entertainment.gif);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: contain;
+  background-color: #212532;
+}
+.indexContainer{
+  width: 1170px;
+  margin-top: 550px;
+}
+img{
+  height:25px;
+  padding: 2px
+}
+.hat{
+  height:170px;
+  margin: 20px 20px 50px 0;
+}
+.hatH1{
+  font-size: 45px;
+}
+.btn-default{
+  font-size: 20px;
+}
+#indexH1{
+  color:goldenrod
+}
+#quizzie h1{
+  font-size: 30px;
+  margin-left:300px;
+  color: rgb(193, 145, 25);
+  text-shadow: rgb(236, 234, 234) 1px 0 30px;
 }
 
-h1 {
-  text-align: center;
-  color: #740001;
-  font-size: 36px;
-  margin-top: 20px;
+#quizzie h2{
+  font-size: 20px;
+  color: whitesmoke;
 }
-
-.quiz-step {
-  display: none;
+#quizzie li{
+  list-style:none;
+  color: blanchedalmond;
+  
 }
-
-.question {
-  margin-bottom: 20px;
+#houseMates{
+  border:2px solid black;
+  width :20%;
+  text-align:center;
+  border-radius: 15px;
+  color: blanchedalmond;
 }
-
-.question h2 {
-  font-size: 24px;
-  margin: 0;
-  color: #740001;
-}
-
-.answer-wrap {
-  background-color: #f5f5f5;
-  padding: 10px;
-  border-radius: 5px;
-  margin-bottom: 10px;
-}
-
-.answer-text {
-  font-size: 18px;
-  margin: 0;
-}
-
-.current {
-  display: block;
-}
-
-/* Low value answers */
-.low-value {
-  background-color: #d7f2e9;
-}
-
-.low-value:hover {
-  background-color: #b2d8ce;
-  cursor: pointer;
-}
-
-/* High value answers */
-.high-value {
-  background-color: #ffd3b6;
-}
-
-.high-value:hover {
-  background-color: #ffad99;
-  cursor: pointer;
+#bottomSection{
+  color:white
 }

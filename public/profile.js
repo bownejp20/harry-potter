@@ -63,83 +63,83 @@ var resultOptions = [
 
 
 
-// const quizSteps = $('#quizzie .quiz-step');
-// let totalScore = 0;
+const quizSteps = $('#quizzie .quiz-step');
+let totalScore = 0;
 
-// quizSteps.each(function() {
-// const currentStep = $(this);
-// const ansOpts = currentStep.children('.quiz-answer');
+quizSteps.each(function() {
+const currentStep = $(this);
+const ansOpts = currentStep.children('.quiz-answer');
 
-// ansOpts.each(function() {
-// const eachOpt = $(this);
+ansOpts.each(function() {
+const eachOpt = $(this);
 
-// eachOpt.on('click', check);
+eachOpt.on('click', check);
 
-// function check() {
-//   const $this = $(this);
-//   const value = $this.attr('data-quizIndex');
-//   const answerScore = parseInt(value);
+function check() {
+  const $this = $(this);
+  const value = $this.attr('data-quizIndex');
+  const answerScore = parseInt(value);
 
-//   if (currentStep.children('.active').length > 0) {
-//     const wasActive = currentStep.children('.active');
-//     const oldScoreValue = wasActive.attr('data-quizIndex');
-//     const oldScore = parseInt(oldScoreValue);
+  if (currentStep.children('.active').length > 0) {
+    const wasActive = currentStep.children('.active');
+    const oldScoreValue = wasActive.attr('data-quizIndex');
+    const oldScore = parseInt(oldScoreValue);
 
-//     currentStep.children('.active').removeClass('active');
-//     $this.addClass('active');
-//     totalScore -= oldScoreValue;
-//     totalScore += answerScore;
-//     calcResults(totalScore);
-//   } else {
-//     $this.addClass('active');
-//     totalScore += answerScore;
-//     calcResults(totalScore);
-//     updateStep(currentStep);
-//   }
-// }
-// });
-// });
+    currentStep.children('.active').removeClass('active');
+    $this.addClass('active');
+    totalScore -= oldScoreValue;
+    totalScore += answerScore;
+    calcResults(totalScore);
+  } else {
+    $this.addClass('active');
+    totalScore += answerScore;
+    calcResults(totalScore);
+    updateStep(currentStep);
+  }
+}
+});
+});
 
-// function updateStep(currentStep) {
-// if (currentStep.hasClass('current')) {
-// currentStep.removeClass('current');
-// currentStep.next().addClass('current');
-// }
-// }
+function updateStep(currentStep) {
+if (currentStep.hasClass('current')) {
+currentStep.removeClass('current');
+currentStep.next().addClass('current');
+}
+}
 
-// function calcResults(totalScore) {
-// if (quizSteps.find('.active').length == quizSteps.length) {
-// const resultsTitle = $('#results h1');
-// const resultsDesc = $('#results .desc');
-// const lowestScoreArray = $('#quizzie .low-value').map(function() {
-// return $(this).attr('data-quizIndex');
-// }).get();
-// const minScore = lowestScoreArray.reduce((accumulator, currentValue) => accumulator + parseInt(currentValue), 0);
-// const highestScoreArray = $('#quizzie .high-value').map(function() {
-//     return $(this).attr('data-quizIndex');
-//   }).get();
-//   const maxScore = highestScoreArray.reduce((accumulator, currentValue) => accumulator + parseInt(currentValue), 0);
+function calcResults(totalScore) {
+if (quizSteps.find('.active').length == quizSteps.length) {
+const resultsTitle = $('#results h1');
+const resultsDesc = $('#results .desc');
+const lowestScoreArray = $('#quizzie .low-value').map(function() {
+return $(this).attr('data-quizIndex');
+}).get();
+const minScore = lowestScoreArray.reduce((accumulator, currentValue) => accumulator + parseInt(currentValue), 0);
+const highestScoreArray = $('#quizzie .high-value').map(function() {
+    return $(this).attr('data-quizIndex');
+  }).get();
+  const maxScore = highestScoreArray.reduce((accumulator, currentValue) => accumulator + parseInt(currentValue), 0);
   
-//   const range = maxScore - minScore;
-//   const numResults = resultOptions.length;
-//   const interval = range / (numResults - 1);
-//   let increment = '';
-//   let n = 0;
+  const range = maxScore - minScore;
+  const numResults = resultOptions.length;
+  const interval = range / (numResults - 1);
+  let increment = '';
+  let n = 0;
   
-//   while (n < numResults) {
-//     increment = minScore + interval * n;
+  while (n < numResults) {
+    increment = minScore + interval * n;
   
-//     if (totalScore <= increment) {
-//       resultsTitle.replaceWith('<h1>' + resultOptions[n].title + '</h1>');
-//       resultsDesc.replaceWith('<p class=\'desc\'>' + resultOptions[n].desc + '</p>');
-//       return;
-//     } else {
-//       n++;
-//     }
-//   }
+    if (totalScore <= increment) {
+      resultsTitle.replaceWith('<h1>' + resultOptions[n].title + '</h1>');
+      resultsDesc.replaceWith('<p class=\'desc\'>' + resultOptions[n].desc + '</p>');
+      return;
+    } else {
+      n++;
+    }
+  }
 
-// }
-// }
+}
+}
   
 
 
