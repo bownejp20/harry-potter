@@ -9,16 +9,13 @@ module.exports = function (app, passport, db, ObjectID) {
 
   // PROFILE SECTION =========================
   app.get('/profile', isLoggedIn, function (req, res) {
-    db.collection('messages').find().toArray((err, result) => {
+    db.collection('users').find({'local.houseName':req.user.local.houseName? req.user.local.houseName: null // this finds all the users from the house
+    }).toArray((err, result) => {
       if (err) return console.log(err)
       res.render('profile.ejs', {
         user: req.user,
-        messages: result.map(pplMSG => {
-          return {
-            ...pplMSG,
-            reactions: pplMSG.thumbUp + pplMSG.thumbDown
-          }
-        })
+        name: req.user.local.name, // came from line 64 in passport.js
+        houseMates: result
       })
     })
   });
@@ -33,25 +30,27 @@ module.exports = function (app, passport, db, ObjectID) {
 
   // message board routes ===============================================================
 
-  app.post('/messages', (req, res) => {
-    db.collection('messages').save({ name: req.body.name, msg: req.body.msg, thumbUp: 0, thumbDown: 0 }, (err, result) => {
-      if (err) return console.log(err)
-      console.log('saved to database')
-      res.redirect('/profile')
-    })
-  })
+  // app.post('/messages', (req, res) => {
+  //   db.collection('messages').save({ name: req.body.name, msg: req.body.msg, thumbUp: 0, thumbDown: 0 }, (err, result) => {
+  //     if (err) return console.log(err)
+  //     console.log('saved to database')
+  //     res.redirect('/profile')
+  //   })
+  // })
 
-  app.put('/messages', (req, res) => {
-    db.collection('messages')
-      .findOneAndUpdate({ name: req.body.name, msg: req.body.msg }, {
-        $inc: {
-          thumbUp: 1
+  app.put('/houseName', (req, res) => {
+    const{id, houseName} = req.body
+    db.collection('users')
+      .findOneAndUpdate({ _id:ObjectID(id)}, {
+        $set: {
+          'local.houseName': houseName
         }
       }, {
-        sort: { _id: -1 },
-        upsert: true
+        // sort: { _id: -1 },
+        upsert: false 
       }, (err, result) => {
         if (err) return res.send(err)
+        console.log(result)
         res.send(result)
       })
   })
@@ -73,7 +72,7 @@ module.exports = function (app, passport, db, ObjectID) {
 
   app.delete('/houseMates', (req, res) => {
     const {id} = req.body
-    db.collection('houseMates').findOneAndDelete({ _id:ObjectID(id)}, (err, result) => {
+    db.collection('users').findOneAndDelete({ _id:ObjectID(id)}, (err, result) => {
       if (err) return res.send(500, err)
       res.send('Message deleted!')
     })

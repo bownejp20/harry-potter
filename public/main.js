@@ -1,6 +1,8 @@
 const submitBttn = document.querySelector('#submitName')
 const trash = document.getElementsByClassName("fa-trash");
 
+
+
 Array.from(thumbUp).forEach(function(element) {
       element.addEventListener('click', function(){
         fetch('messages', {

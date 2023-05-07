@@ -7,6 +7,9 @@
 
     <link rel="stylesheet" href="https://yui.yahooapis.com/pure/0.6.0/pure-min.css">
     <link rel="stylesheet" href="https://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=La+Belle+Aurore&family=Nanum+Myeongjo&family=Pirata+One&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/phosphor-icons"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>HP - Sorting Hat</title>
@@ -15,7 +18,7 @@
 <body class="profileBody">
 
     <div id="quizzie">
-        <h1> Hogwarts Sorting Hat Quiz </h1>
+        <h1><span><img class="wand" src="img/wand.png"></span> Hogwarts Sorting Hat Quiz </h1>
         <ul class="quiz-step step1 current">
             <li class="question">
                 <div class="question-wrap">
@@ -23,15 +26,15 @@
                     </h2>
                 </div>
             </li>
-            <li class="quiz-answer low-value" data-quizIndex="2">
+            <li class="quiz-answer low-value" >
                 <div class="answer-wrap">
-                    <input id="one" type="radio" class="" value="" name="one"><label for="one">Try to take on the dog
+                    <input id="one" type="radio" class="" value="1" name="one"><label for="one">Try to take on the dog
                         myself, distracting it's view from my friend.</label>
                 </div>
             </li>
-            <li class="quiz-answer high-value" data-quizIndex="4">
+            <li class="quiz-answer high-value" >
                 <div class="answer-wrap">
-                    <input id="oneOne" type="radio" class="" value="" name="one"><label for="oneOne"> I use my
+                    <input id="oneOne" type="radio" class="" value="5" name="one"><label for="oneOne"> I use my
                         exceptional broom flying skills to zoom past the dog - leaving my friend in despair.</label>
                 </div>
             </li>
@@ -42,15 +45,15 @@
                     <h2>Question #2: You find yourself standing at a mysterious locked door, what do you do?</h2>
                 </div>
             </li>
-            <li class="quiz-answer low-value" data-quizIndex="2">
+            <li class="quiz-answer low-value" >
                 <div class="answer-wrap">
-                    <input id="two" type="radio" class="" value="" name="two"><label for="two">Leave the door alone and
+                    <input id="two" type="radio" class="" value="1" name="two"><label for="two">Leave the door alone and
                         act like it doesn't exist.</label>
                 </div>
             </li>
-            <li class="quiz-answer high-value" data-quizIndex="4">
+            <li class="quiz-answer high-value" >
                 <div class="answer-wrap">
-                    <input id="twoTwo" type="radio" class="" value="" name="two"><label for="twoTwo">Come back later
+                    <input id="twoTwo" type="radio" class="" value="5" name="two"><label for="twoTwo">Come back later
                         when no one is around and try to find your way through it.</label>
                 </div>
             </li>
@@ -61,15 +64,15 @@
                     <h2>Question #3: Choose one of the following pets for a companion:</h2>
                 </div>
             </li>
-            <li class="quiz-answer low-value" data-quizIndex="2">
+            <li class="quiz-answer low-value" >
                 <div class="answer-wrap">
-                    <input id="three" type="radio" class="" value="" name="three"><label for="three">An owl - bird of
+                    <input id="three" type="radio" class="" value="1" name="three"><label for="three">An owl - bird of
                         prey.</label>
                 </div>
             </li>
-            <li class="quiz-answer high-value" data-quizIndex="4">
+            <li class="quiz-answer high-value" >
                 <div class="answer-wrap">
-                    <input id="threeThree" type="radio" class="" value="" name="three"><label for="threeThree">A Cat - a
+                    <input id="threeThree" type="radio" class="15" value="5" name="three"><label for="threeThree">A Cat - a
                         domesticated creature for both Wizards and Muggles.</label>
                 </div>
             </li>
@@ -81,15 +84,15 @@
                         Malfoy mansion. You:</h2>
                 </div>
             </li>
-            <li class="quiz-answer low-value" data-quizIndex="2">
+            <li class="quiz-answer low-value">
                 <div class="answer-wrap">
-                    <input id="four" type="radio" class="" value="" name="four"><label for="four">Gather together
+                    <input id="four" type="radio" class="" value="1" name="four"><label for="four">Gather together
                         Dumbledore's Army and prepare to fight your way through the dungeon.</label>
                 </div>
             </li>
-            <li class="quiz-answer high-value" data-quizIndex="4">
+            <li class="quiz-answer high-value">
                 <div class="answer-wrap">
-                    <input id="fourFour" type="radio" class="" value="" name="four"><label for="fourFour">Leave your
+                    <input id="fourFour" type="radio" class="" value="5" name="four"><label for="fourFour">Leave your
                         friend to be devoured by the Death Eaters.</label>
                 </div>
             </li>
@@ -100,36 +103,34 @@
                     <h2>Question #5: Severus Snape: Friend or Foe?</h2>
                 </div>
             </li>
-            <li class="quiz-answer low-value" data-quizIndex="2">
+            <li class="quiz-answer low-value">
                 <div class="answer-wrap">
-                    <input id="five" type="radio" class="" value="" name="five"><label for="five">Foe: Snape has always
+                    <input id="five" type="radio" class="" value="1" name="five"><label for="five">Foe: Snape has always
                         disliked Harry.</label>
                 </div>
             </li>
-            <li class="quiz-answer high-value" data-quizIndex="4">
+            <li class="quiz-answer high-value">
                 <div class="answer-wrap">
-                    <input id="fiveFive" type="radio" class="" value="" name="five"><label for="fiveFive">Friend:
+                    <input id="fiveFive" type="radio" class="" value="5" name="five"><label for="fiveFive">Friend:
                         Dumbledore had no doubt that Snape was trustworthy</label>
                 </div>
             </li>
         </ul>
     </div>
     <form id="bottomSection">
-        <h3> submit your name to get your house!</h3>
-        <input id="name" type="text" placeholder="Name">
-        <button id="submitName"> submit </button>
-        <h4>House:</h4>
+        <button data-id="<%=user._id%>" id="submitName"> submit </button> <!--  user._id, user comes from line 16 in routes.js -->
+        <h4 id="houseData" data-house="<%=user.local.houseName%>" >House:  <%=user.local.houseName%></h4>
         <p class="desc"></p>
     </form>
     <section id="houseMates">
         <h2>House Mates</h2>
         <ul class="names">
-            <% for(var i=0; i<messages.length; i++) {%>
+            <% for(let i=0; i<houseMates.length; i++) {%> <!-- houseMates is an array-->
                 <li class="message">
-                    <span> <img class="harryIcon"src="img/harry.jpg">
-                        <%=messages[i].name%>
+                    <span> 
+                        <%=houseMates[i].local.name%> <!-- we do housemates and not name from routes line 18 because we need all the users and name is just one user-->
                     </span>
-                    <span data-id="<%=transactions[i]._id %>"><img class="ph ph-trash"src="img/wand.jpg"></i></span>
+                    <span data-id="<%=user._id %>"> <i class="ph ph-trash"></i></span>
                 </li>
                 <% } %>
         </ul>
@@ -139,3 +140,8 @@
 </body>
 
 </html>
+
+
+
+
+
